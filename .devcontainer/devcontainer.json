@@ -1,0 +1,58 @@
+{
+  "name": "Time Series Forecasting",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/host/.ssh,type=bind,consistency=cached",
+  ],
+  "runArgs": [
+    "--cpus=24",
+    "--gpus=all",
+    "--runtime=nvidia",
+    "--privileged",
+    "--shm-size=20.48gb",
+    "--network=host"
+  ],
+  "customizations": {
+    "settings": {
+      "terminal.integrated.profiles.linux": {
+        "bash": {
+          "path": "/usr/bin/bash",
+          "args": ["--rcfile", "/root/.bashrc"] 
+        }
+      }
+    },
+    "vscode": {
+      "extensions": [
+        "batisteo.vscode-django",
+        "donjayamanne.python-environment-manager",
+        "donjayamanne.python-extension-pack",
+        "kevinrose.vsc-python-indent",
+        "ms-azuretools.vscode-docker",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.vscode-jupyter-powertoys",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        "ms-toolsai.tensorboard",
+        "eeyore.yapf",
+        "njpwerner.autodocstring",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "visualstudioexptteam.vscodeintellicode",
+        "wholroyd.jinja",
+        "dustypomerleau.rust-syntax",
+        "1yib.rust-bundle",
+        "tamasfe.even-better-toml",
+        "vadimcn.vscode-lldb"
+      ]
+    }
+  },
+  "postCreateCommand": ".devcontainer/setup.sh"
+}

@@ -31,4 +31,5 @@ import src
 from pytorch_forecasting import TimeSeriesDataSet
 from pytorch_forecasting.data import GroupNormalizer
 from pytorch_forecasting.metrics import RMSE, MAE
+import timesynth as ts
 print("#"*25+" All Libraries imported without errors! "+"#"*25)

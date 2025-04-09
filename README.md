@@ -135,4 +135,25 @@ is a seasoned data scientist specializing in demand forecasting with over a deca
 <p align="center"> <a href="https://packt.link/free-ebook/9781803246802">https://packt.link/free-ebook/9781803246802 </a> </p>
 
 
+## DevContainer
 
+Tested on linux, ubuntu 24.04 host.
+It takes some time to build the image and prepare the environment.
+
+### What devcontainer does for you:
+
+- download all dependencies, sets up pyenv with 3.10 (required in book)
+- download data.zip and softlinks to your workspace data dir
+- mounts project directory
+- once started attempts to install all dependencies and runs all checks
+- mounts ssh and sets up keys for as post job
+- installs a bunch of plugins in vscode
+- sets up nvidia video card runtime to allow pytorch access it from docker container
+- attempts to setup normal bash environment, but does not fully work (run `bash` in new terminal)
+
+### Prepare host for devcontainer first. Requires:
+
+- nvidia driver
+- docker
+- docker nvidia runtime
+- maybe sometihng I have forgotten...
